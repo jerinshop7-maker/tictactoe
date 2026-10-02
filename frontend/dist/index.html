@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Neural Tic-Tac-Toe</title>
+    
+<script type="module">
+import init, * as bindings from '/frontend-f245fd57a570df8b.js';
+const wasm = await init({ module_or_path: '/frontend-f245fd57a570df8b_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+        h1 { margin-bottom: 0.25rem; }
+        .sub { color: #94a3b8; margin-top: 0; }
+        #status { margin: 1rem 0; font-size: 1.2rem; min-height: 1.5rem; }
+        #board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 8px;
+        }
+        .cell {
+            width: 100px;
+            height: 100px;
+            background: #1e293b;
+            border-radius: 10px;
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            user-select: none;
+        }
+        .cell:hover { background: #334155; }
+        .cell.x { color: #38bdf8; }
+        .cell.o { color: #fb7185; }
+        button {
+            margin-top: 1.5rem;
+            padding: 0.6rem 1.4rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            background: #38bdf8;
+            color: #0f172a;
+            cursor: pointer;
+        }
+    </style>
+<link rel="modulepreload" href="/frontend-f245fd57a570df8b.js" crossorigin="anonymous" integrity="sha384-fr6+SeL7pe6Kr+E1F4wlM+B1vJ116/5gzqDZThY++JAGplJEbXZGUnEVpLlPOnOT"><link rel="preload" href="/frontend-f245fd57a570df8b_bg.wasm" crossorigin="anonymous" integrity="sha384-d1TBFUmKLaDgIPZVelULxusI6SZF5FJVA8De79N3AN/VjCzYhYGKtotvkx0fZ/nd" as="fetch" type="application/wasm"></head>
+<body></body>
+</html>

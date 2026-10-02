@@ -1,0 +1,4 @@
+/target
+frontend/target
+/dist
+.playwright-mcp
